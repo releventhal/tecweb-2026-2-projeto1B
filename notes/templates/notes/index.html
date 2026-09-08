@@ -1,9 +1,16 @@
 {% extends 'notes/base.html' %}
+{% load static %}
 
 {% block content %}
-  <header class="appbar">
-    <span class="subtitle">Como o Post-it, mas com outro verbo</span>
-  </header>
+<header class="appbar">
+  <img
+    src="{% static 'notes/img/logo-getit.png' %}"
+    class="logo"
+    alt="Logo do Get-it"
+  />
+
+  <span class="subtitle">Como o Post-it, mas com outro verbo</span>
+</header>
 
   <main class="container">
     <form class="form-card" method="POST">
