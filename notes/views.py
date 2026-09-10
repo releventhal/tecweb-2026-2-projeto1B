@@ -12,3 +12,9 @@ def index(request):
     else:
         all_notes = Note.objects.all()
         return render(request, 'notes/index.html', {'notes': all_notes})
+
+def delete_note(request, note_id):
+    note = Note.objects.get(id=note_id)
+    note.delete()
+
+    return redirect('index')

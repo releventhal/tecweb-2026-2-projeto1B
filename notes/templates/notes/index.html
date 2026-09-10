@@ -40,6 +40,20 @@
           <div class="card-content">
             <p>{{ note.content }}</p>
           </div>
+
+            <a
+            class="card-delete"
+            href="{% url 'delete_note' note.id %}"
+            title="Excluir anotação"
+            aria-label="Excluir anotação"
+          >
+            <img
+              src="{% static 'notes/img/delete.png' %}"
+              alt=""
+            />
+          </a>
+
+
         </div>
       {% endfor %}
     </div>
