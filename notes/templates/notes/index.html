@@ -53,6 +53,18 @@
             />
           </a>
 
+          <a
+          class="card-edit"
+          href="{% url 'edit_note' note.id %}"
+          title="Editar anotação"
+          aria-label="Editar anotação"
+        >
+          <img
+            src="{% static 'notes/img/edit.png' %}"
+            alt=""
+          />
+        </a>
+
 
         </div>
       {% endfor %}

@@ -1,0 +1,37 @@
+{% extends 'notes/base.html' %}
+
+{% block content %}
+  <header class="appbar">
+    <span class="subtitle">Editar anotação</span>
+  </header>
+
+  <main class="container">
+    <form class="form-card" method="POST">
+      {% csrf_token %}
+
+      <input
+        class="form-card-title"
+        type="text"
+        name="titulo"
+        value="{{ note.title }}"
+        placeholder="Título"
+      />
+
+      <textarea
+        class="autoresize"
+        name="detalhes"
+        placeholder="Digite o conteúdo..."
+      >{{ note.content }}</textarea>
+
+      <div class="edit-actions">
+        <a class="btn cancel-button" href="{% url 'index' %}">
+          Cancelar
+        </a>
+
+        <button class="btn save-button" type="submit">
+          Salvar
+        </button>
+      </div>
+    </form>
+  </main>
+{% endblock %}

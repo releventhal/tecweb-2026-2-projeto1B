@@ -18,3 +18,20 @@ def delete_note(request, note_id):
     note.delete()
 
     return redirect('index')
+
+def edit_note(request, note_id):
+    note = Note.objects.get(id=note_id)
+
+    if request.method == 'POST':
+        note.title = request.POST.get('titulo')
+        note.content = request.POST.get('detalhes')
+
+        note.save()
+
+        return redirect('index')
+
+    return render(
+        request,
+        'notes/edit.html',
+        {'note': note}
+    )
